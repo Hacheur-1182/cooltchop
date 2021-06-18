@@ -1,0 +1,74 @@
+<%- include('./components/partials/header') -%>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg "  data-navbar="fixed">
+    <div class="container">
+        <div class="navbar-left">
+            <button class="navbar-toggler" type="button" data-toggle="offcanvas" data-target="#offcanvas-menu-4">&#9776;</button>
+            <a class="navbar-brand" href="/index">
+                <img class="logo-light logoSize" src="/images/logo/cooltchop-dark.png" alt="logo">
+            </a>
+        </div>
+        <section class="navbar-mobile">
+            <span class="navbar-divider"></span>
+            <nav class="nav nav-navbar ml-lg-10">
+                <a class="nav-link text-black-50 lead-2 active" href="/index">Menu</a>
+                <a class="nav-link text-black-50 lead-2" href="/dessert">Dessert</a>
+                <a class="nav-link text-black-50 lead-2" href="/drinks">Drinks</a>
+                <a class="nav-link text-black-50 lead-2" href="/breakfast">Breakfast</a>
+                <a class="nav-link text-black-50 lead-2" href="./reservation">reservation</a>
+                <a class="nav-link text-black-50 lead-2" href="contact">Contact</a>
+            </nav>
+        </section>
+    </div>
+</nav>
+<!-- /.navbar -->
+<main class="main-content">
+    <!--
+    |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+    | Contact
+    |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+    !-->
+    <section class="section text-white overflow-hidden bg-fixed" data-overlay="3" style="background-image: linear-gradient(1805deg, #a6dcef 0%, #ddf3f5 20%, #a6dcef 50%)">
+        <canvas class="constellation" data-radius="2"></canvas>
+        <div class="container">
+            <div class="row gap-y">
+                <div class="col-11 col-md-6 mx-auto mx-md-0">
+                    <form class="input-glass" action="" method="POST" data-form="mailer">
+                        <h3>Your Contact</h3>
+                        <div class="form-group">
+                            <input name="lname" class="form-control" type="text" placeholder="Your Last Name">
+                        </div>
+                        <div class="form-group">
+                            <input name="fname" class="form-control" type="text" placeholder="Your First Name">
+                        </div>
+
+                        <div class="form-group input-group">
+                            <input name="email" type="email" class="form-control" placeholder="Email address">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input name="tel" class="form-control" type="tel" placeholder="Phone">
+                        </div>
+                        <H3>Book Menu</H3>
+                        <div class="form-group">
+                            <textarea name="textarea" class="form-control" rows="4" placeholder="Textarea" required></textarea>
+                        </div>
+
+
+                        <div class="input-group">
+                            <div class="input-group-append">
+                                <button class="btn btn-glass btn-light" type="submit">Go!</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<%- include('./components/partials/footer') -%>

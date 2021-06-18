@@ -1,0 +1,25 @@
+<%- include('./components/partials/header') -%>
+<%- include('./components/partials/navbar') -%>
+
+
+<!-- drink Content -->
+  <div class="container pt-10">
+    <div class="row gap-y">
+      <%DessertItem.map((dessert) => {%>
+      <div class="col-lg-3 col-sm-4">
+        <div class="product-3">
+          <a href="/item/<%= dessert._id %>" class="product-media card shadow-1 hover-shadow-6">
+            <img src="<%= dessert.image%>" alt="product">
+          </a>
+          <div class="product-detail">
+            <h6><%= dessert.name%></h6>
+            <div class="product-price"><%= dessert.price%> FCFA</div>
+          </div>
+        </div>
+      </div>
+        <%})%>
+    </div>
+  </div>
+<!-- drink Content -->
+<%- include('./components/partials/cardModal') -%>
+<%- include('./components/partials/footer') -%>

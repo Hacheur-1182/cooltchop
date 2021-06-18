@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <title>Restaurant</title>
+
+    <!-- Styles -->
+    <link href="/stylesheets/page.min.css" rel="stylesheet">
+    <link href="/stylesheets/style.css" rel="stylesheet">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/images/logo/favicon.ico">
+    <link rel="icon" href="/images/logo/favicon.ico">
+
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg" style="background: whitesmoke" data-navbar="fixed">
+    <div class="container">
+        <div class="navbar-left">
+            <button class="navbar-toggler" type="button" data-toggle="offcanvas" data-target="#offcanvas-menu-4">&#9776;</button>
+            <a class="navbar-brand" href="/index">
+                <img class="logo-light logoSize" src="/images/logo/cooltchop-dark.png" alt="logo">
+            </a>
+        </div>
+        <section class="navbar-mobile">
+            <span class="navbar-divider"></span>
+            <nav class="nav nav-navbar ml-lg-10">
+                <a class="nav-link text-black-50 lead-2 active" href="/index">Menu</a>
+                <a class="nav-link text-black-50 lead-2" href="/dessert">Dessert</a>
+                <a class="nav-link text-black-50 lead-2" href="/drink">Drinks</a>
+                <a class="nav-link text-black-50 lead-2" href="/breakfast">Breakfast</a>
+                <!--                <a class="nav-link text-black-50 lead-2" href="./reservation">reservation</a>-->
+                <a class="nav-link text-black-50 lead-2" href="contact">Contact</a>
+            </nav>
+        </section>
+        <a class="nav-link" href="/cart">
+            <i class="fa fa-shopping-cart"></i>
+                        <span id="numItems" class="badge badge-number badge-danger">4</span>
+        </a>
+    </div>
+</nav>
+<!-- /.navbar -->
+
+<section class="section">
+    <div class="container">
+
+        <div class="row gap-y">
+            <div class="col-lg-8">
+                <table class="table table-cart">
+                    <tbody valign="middle">
+
+                    <tr>
+                        <img src="<%= item.image %>" alt="">
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+
+            <div class="col-lg-4">
+                <div class="cart-price">
+                    <form method="post" action="/cart">
+                        <div class="flexbox">
+                            <div>
+                                <p><strong>Price</strong></p>
+                            </div>
+                            <div>
+                                <p><strong><%= item.price %> FCFA</strong></p>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="flexbox">
+                                <div>
+                                    <label for="quantity">Quantité :</label>
+                                    </div>
+                                        <div>
+                                            <select  name="quantity" id="" class="form-control form-control-sm" >
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                            </select>
+                                        </div>
+                                    </div>
+<!--                    </form>-->
+                </div>
+<!--                <form method="post" action="/cart">-->
+
+                    <div class="row">
+                                <div class="col-6">
+                                    <a class="btn btn-block btn-secondary" href="/index"><i class="ti-angle-left fs-9"></i> More</a>
+                                </div>
+
+                            <div class="col-6">
+                                <button name="addList" value="<%= item._id %>" class="btn btn-block btn-label btn-primary">
+                                        <label><i class="fa fa-shopping-cart"></i></label> Ajouter </button>
+                            </div>
+                        </div>
+                </form>
+
+                <hr class="my-7">
+
+                <h5 class="mb-6">Commantaires</h5>
+                <%item.reviews.map(function (review) {%>
+                    <div class="media-list">
+                        <div class="media">
+                            <div class="media-body">
+                                <div class="small-1">
+                                    <strong><%= review.name%></strong>
+                                    <time class="ml-4 opacity-70 small-3" datetime="2020-07-14 20:00">24 min ago</time>
+                                </div>
+                                <p class="small-2 mb-0"><%= review.comment %></p>
+                            </div>
+                            <div class="rating mb-3">
+                                <%for(let num in [1, 2, 3, 4, 5]){%>
+                                <%if (review.stars > num){%>
+                                    <label class="fa fa-star active"></label>
+                                <%}else{%>
+                                    <label class="fa fa-star empty"></label>
+                                <%}%>
+                                <%}%>
+                            </div>
+                        </div>
+                    </div>
+                <%})%>
+
+            </div>
+        </div>
+
+        <hr class="my-7">
+
+        <div class="row">
+            <div class="col-lg-8">
+                <h5 class="lead-5">Ajouter un Commentaire</h5>
+                <form method="POST">
+                    <div class="form-group">
+                        <input name="name" class="form-control" type="text" placeholder="code of table" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="comment" class="form-control" placeholder="Comment" rows="4" style="margin-top: 0; margin-bottom: 0; height: 86px;" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <select type="number" class="form-control" name="stars" required>
+                            <option class="bg-pale-lights" value="">Donnez une note</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                <button class="btn btn-primary btn-block" type="submit">Submit your review</button>
+            </form>
+        </div>
+
+    </div>
+    </div>
+</section>
+<%- include('footer') -%>
+

@@ -1,0 +1,39 @@
+.showAlert{
+    visibility: visible;
+}
+.logoSize{
+    height: 30px;
+    width: 95px;
+}
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 969px;
+    background-image: linear-gradient(65deg, #A683E3 50%, #E4E9FD 50%);
+    filter: hue-rotate(120deg);
+    animation: animate 10s linear infinite;
+}
+@keyframes animate {
+    0%{
+        filter: hue-rotate(0deg);
+    }
+    100%{
+        filter: hue-rotate(360deg);
+    }
+}
+.btn-signup{
+    background: #A683E3;
+    color: white;
+}
+.footerLogin {
+    color: white;
+    color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    position: sticky;
+}
+.fabutton {
+    background: none;
+    padding: 0;
+    border: none;
+}

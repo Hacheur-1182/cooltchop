@@ -1,0 +1,87 @@
+<%- include('./components/partials/header') -%>
+<%- include('./components/partials/navbar') -%>
+
+<body data-aos-easing="ease" data-aos-duration="1500" data-aos-delay="0" class="">
+
+<!-- cart Content -->
+<main class="main-content">
+
+    <section class="section">
+        <div class="container">
+
+            <div class="row gap-y">
+
+                <div class="col-lg-8">
+                    <%cart.map(function (cart) {%>
+                    <table class="table table-cart">
+                        <tbody valign="middle">
+                        <tr>
+                            <td>
+                                <a href="/remove/<%= cart.itemId._id %>" class="fabutton item-remove" ><i class="ti-close"></i></a>
+
+                            </td>
+
+                            <td>
+                                <a href="/item/<%= cart.itemId._id%>">
+                                    <img class="rounded" src="<%= cart.itemId.image %>" alt="...">
+                                </a>
+                            </td>
+                            <td>
+                                <a href="/item/<%= cart.itemId._id%>">
+                                    <h5><%= cart.itemId.name%></h5>
+                                </a>
+                            </td>
+                            <td>
+                                <h5>Quantité: <%= cart.quantity%></h5>
+                            </td>
+
+                            <td>
+                                <h4 class="price"><%- cart.itemId.price * cart.quantity -%></h4>
+                            </td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                        <%})%>
+                </div>
+
+
+                <div class="col-lg-4">
+                    <div class="cart-price">
+
+                        <div class="flexbox">
+                            <div>
+                                <p><strong>Total:</strong></p>
+                            </div>
+
+                            <div>
+                                <p class="fw-600"><%= total_price %> FCFA</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <a class="btn btn-block btn-secondary" href="/index">Add more</a>
+                        </div>
+
+                        <div class="col-6">
+                            <form action='/created-order' method="post">
+                                <button class="btn btn-block btn-primary" type="submit">Commander <i class="ti-angle-right fs-9"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+
+
+        </div>
+    </section>
+
+</main>
+
+</body>
+
+<%- include('./components/partials/cardModal') -%>
+<%- include('./components/partials/footer') -%>

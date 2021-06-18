@@ -1,0 +1,63 @@
+<%- include('./components/partials/header') -%>
+<%- include('./components/partials/navbar') -%>
+
+<!-- Modal - Card -->
+<div class="modal fade" id="modal-portfolio" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body p-0">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+                <div class="col">
+                    <div class="container">
+                        <ul class="project-detail mt-7">
+                            <li>
+                                <strong>Name</strong>
+                                <span id="item-name">Name here</span>
+                            </li>
+
+                            <li>
+                                <strong>Rate</strong>
+                                <span>
+    <!--                        <a class="text-inherit small-2" href="#">-->
+                                    <!--                          <i class="fa fa-heart pr-1 opacity-60 text-dangers"></i> 197</a>-->
+                                        <div class="rating mb-3">
+                                            <label class="fa fa-star active"></label>
+                                            <label class="fa fa-star active"></label>
+                                            <label class="fa fa-star active"></label>
+                                            <label class="fa fa-star active"></label>
+                                            <label class="fa fa-star active"></label>
+                                        </div>
+                        </span>
+                            </li>
+                            <li>
+                                <strong>Price</strong>
+                                <span id="item-price">Price here</span>
+                            </li>
+                            <li>
+                                <form action="/cart" method="post">
+                                    <button name="addList" type="submit" class="btn btn-label btn-primary">
+                                        <label><i class="fa fa-shopping-cart"></i></label>AddList</button>
+                                    <button name="book" type="submit" class="btn btn-primary">Book</button>
+                                </form>
+
+                            </li>
+
+                        </ul>
+                        <h5>Description</h5>
+                        <p id="item-description">Description here</p>
+                    </div>
+
+                    <!--                  <div class="col-6 col-md-5 mx-auto py-7" style="min-height: 400px;">-->
+                    <!--                    <img class="fill-parent fit-cover rounded-right" src="/images/menu/4.jpg" alt="project image">-->
+                    <!--                  </div>-->
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<%- include('./components/partials/footer') -%>

@@ -1,0 +1,90 @@
+<%- include('./components/partials/header') -%>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg "  data-navbar="fixed">
+    <div class="container">
+
+        <div class="navbar-left">
+            <button class="navbar-toggler" type="button" data-toggle="offcanvas" data-target="#offcanvas-menu-4">&#9776;</button>
+            <a class="navbar-brand" href="/index">
+                <img class="logo-light logoSize" src="/images/logo/cooltchop-dark.png" alt="logo">
+            </a>
+        </div>
+
+        <section class="navbar-mobile">
+            <span class="navbar-divider"></span>
+            <nav class="nav nav-navbar ml-lg-10">
+                <a class="nav-link text-black-50 lead-2 active" href="/index">Menu</a>
+                <a class="nav-link text-black-50 lead-2" href="/dessert">Dessert</a>
+                <a class="nav-link text-black-50 lead-2" href="/drinks">Drinks</a>
+                <a class="nav-link text-black-50 lead-2" href="/breakfast">Breakfast</a>
+                <a class="nav-link text-black-50 lead-2" href="./reservation">reservation</a>
+                <a class="nav-link text-black-50 lead-2" href="contact">Contact</a>
+            </nav>
+        </section>
+    </div>
+</nav>
+<!-- /.navbar -->
+
+
+<main class="main-content">
+    <!--
+    |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+    | Contact
+    |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+    !-->
+    <section class="section text-white overflow-hidden bg-fixed" data-overlay="3" style="background-image: linear-gradient(135deg, #6f86d6 0%, #48c6ef 100%);">
+        <canvas class="constellation" data-radius="2"></canvas>
+        <div class="container">
+            <div class="row gap-y">
+                <div class="col-11 col-md-6 mx-auto mx-md-0">
+                    <form class="input-glass" action="/contact" method="post" data-form="mailer">
+                        <h3>Contact Us</h3>
+                        <div class="form-group">
+                            <input name="name" class="form-control" type="text" placeholder="Your Name">
+                        </div>
+
+                        <div class="form-group input-group">
+                            <input name="email" type="email" class="form-control" placeholder="Email address">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea name="textarea" class="form-control" rows="4" placeholder="Textarea" required></textarea>
+                        </div>
+
+
+                        <div class="input-group">
+                            <div class="input-group-append">
+                                <button class="btn btn-glass btn-light" type="submit">Go!</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-11 col-md-4 mx-auto text-white pt-1">
+                    <h3>Find Us</h3>
+                    <h6>Address</h6>
+                    <p>Yaoundé,<br/>Yaoundé 6,<br/>Chapelle Nsimeyong</p>
+                    <h6>Phone</h6>
+                    <p>(+237) 696-263-641</p>
+                    <p>(+237) 676-532-558</p>
+                    <h6>Email</h6>
+                    <p>contact@inchtechs.com</p>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!--    Map-->
+    <div>
+        <iframe class="col-lg col-sm-4 mx-auto" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7961.790326704155!2d11.493476745372975!3d3.832668976142415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x108bcff234f9827f%3A0x943d2fc9bd2f8d68!2sInchTech&#39;s!5e0!3m2!1sfr!2scm!4v1596193654135!5m2!1sfr!2scm"
+                height="300"></iframe>
+    </div>
+</main>
+
+
+<%- include('./components/partials/footer') -%>

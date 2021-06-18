@@ -1,0 +1,27 @@
+<%- include('./components/partials/header') -%>
+<%- include('./components/partials/navbar') -%>
+
+
+<!-- breakfast Content -->
+
+
+    <div class="container pt-10">
+        <div class="row gap-y">
+            <%BreakfastItem.map((breakfast) => {%>
+            <div class="col-lg-3 col-sm-4">
+                <div class="product-3">
+                    <a href="/item/<%= breakfast._id %>" class="product-media card shadow-1 hover-shadow-6">
+                        <img src="<%= breakfast.image %>" alt="product">
+                    </a>
+                    <div class="product-detail">
+                        <h6><%= breakfast.name %></h6>
+                        <div class="product-price"><%= breakfast.price %> FCFA</div>
+                    </div>
+                </div>
+            </div>
+            <%})%>
+        </div>
+    </div>
+<!-- breakfast Content -->
+<%- include('./components/partials/cardModal') -%>
+<%- include('./components/partials/footer') -%>
